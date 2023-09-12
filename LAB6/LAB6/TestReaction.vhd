@@ -1,0 +1,49 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity TestReaction is
+port (KEY : in std_logic_vector (1 downto 0);
+		SW : in std_logic_vector(0 downto 0);
+		CLOCK_50 : in std_logic;
+		HEX0 : out std_logic_vector (6 downto 0);
+		HEX1 : out std_logic_vector (6 downto 0);
+		LEDR : out std_logic_vector (0 downto 0));
+end TestReaction;
+
+architecture bee of TestReaction is
+component SegDecoder IS
+	PORT (D : in std_logic_vector(3 downto 0);
+			Y : out std_logic_vector (6 downto 0));
+END component;
+
+component BCDcount2 Is
+	port ( clear, clock, enable : in std_logic;
+			BCD0 : out std_logic_vector (3 downto 0);
+			BCD1 : out std_logic_vector (3 downto 0));
+
+End  component;
+component lab6 Is
+	port ( Clkin : in std_logic;
+			clkout : out std_logic);
+End component;
+
+signal Q, mux, and_gate, c9: std_logic;
+signal BBCD1, BBCD0 : std_logic_vector(3 downto 0);
+
+begin
+mux <= Q when SW(0) = '0' else '1';
+and_gate <= mux and KEY(1);
+LEDR(0) <= Q;
+obj1:lab6 port map(CLOCK_50, c9);	
+obj2:BCDcount2 port map(KEY(0),c9,Q,BBCD0, BBCD1);
+obj3: segDecoder port map(BBCD0, HEX0);
+obj4: segDecoder port map(BBCD1, HEX1);
+
+process(c9)
+begin
+	if(rising_edge(c9)) then
+		Q <= and_gate;
+	end if;
+end process;
+
+end bee;

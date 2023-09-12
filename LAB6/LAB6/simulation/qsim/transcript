@@ -1,0 +1,30 @@
+# do Lab6.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 14:03:11 on Oct 26,2018
+# vlog -work work Lab6.vo 
+# -- Compiling module lab6
+# 
+# Top level modules:
+# 	lab6
+# End time: 14:03:11 on Oct 26,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 14:03:11 on Oct 26,2018
+# vlog -work work Waveform1.vwf.vt 
+# -- Compiling module lab6_vlg_sample_tst
+# -- Compiling module lab6_vlg_check_tst
+# -- Compiling module lab6_vlg_vec_tst
+# 
+# Top level modules:
+# 	lab6_vlg_vec_tst
+# End time: 14:03:11 on Oct 26,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c -do "Lab6.do" 
+# Start time: 14:03:12 on Oct 26,2018
+# ** Error: (vsim-3170) Could not find 'work.Lab6_vlg_vec_tst'.
+# 
+# Error loading design
+# End time: 14:03:12 on Oct 26,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

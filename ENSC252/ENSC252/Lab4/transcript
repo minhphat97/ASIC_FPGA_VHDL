@@ -1,0 +1,13 @@
+# Compile of FullAdder.vhd was successful.
+# Compile of ripple_carry.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ripple_carry
+# vsim -gui 
+# Start time: 14:24:07 on Oct 05,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.ripple_carry(beh)
+# Loading work.fulladder(beh)
+# End time: 15:11:22 on Oct 05,2018, Elapsed time: 0:47:15
+# Errors: 0, Warnings: 0

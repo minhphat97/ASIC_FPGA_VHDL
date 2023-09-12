@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/tka52/Desktop/ENSC252/Lab4/FullAdder.vhd
+source_file = 1, c:/altera/15.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/15.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/15.0/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/15.0/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, C:/Users/tka52/Desktop/ENSC252/Lab4/db/lab4.cbx.xml
+design_name = FullAdder
+instance = comp, \Sum~output\, Sum~output, FullAdder, 1
+instance = comp, \Carry~output\, Carry~output, FullAdder, 1
+instance = comp, \C~input\, C~input, FullAdder, 1
+instance = comp, \A~input\, A~input, FullAdder, 1
+instance = comp, \B~input\, B~input, FullAdder, 1
+instance = comp, \Sum~0\, Sum~0, FullAdder, 1
+instance = comp, \Carry~0\, Carry~0, FullAdder, 1

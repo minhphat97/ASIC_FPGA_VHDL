@@ -1,0 +1,21 @@
+Library ieee;
+Use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+Entity PreScale Is
+	port ( Clkin : in std_logic;
+			clkout : out std_logic_vector (19 downto 0));
+End preScale;
+
+
+ARCHITECTURE Bee OF preScale is
+signal count : unsigned(19 downto 0) := "00000000000000000000";
+begin 
+Process (clock)
+BEGIN 
+	If (clock'event and clock ='1') then 
+		count <= count+1;
+	end if;
+	end process;
+	f <= count;
+END Bee;

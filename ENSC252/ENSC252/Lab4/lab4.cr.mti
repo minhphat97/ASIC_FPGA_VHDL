@@ -1,0 +1,17 @@
+C:/Users/tka52/Desktop/ENSC252/Lab4/FullAdder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tka52/Desktop/ENSC252/Lab4/FullAdder.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FullAdder
+-- Compiling architecture Beh of FullAdder
+
+} {} {}} C:/Users/tka52/Desktop/ENSC252/Lab4/ripple_carry.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/tka52/Desktop/ENSC252/Lab4/ripple_carry.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ripple_carry
+-- Compiling architecture Beh of ripple_carry
+
+} {} {}}

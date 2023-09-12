@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Oct 26 16:52:53 2018
+Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Full Version
+Revision Name : Lab6
+Top-level Entity Name : TestReaction
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 653 / 114,480 ( < 1 % )
+    Total combinational functions : 483 / 114,480 ( < 1 % )
+    Dedicated logic registers : 485 / 114,480 ( < 1 % )
+Total registers : 485
+Total pins : 20 / 529 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 1,024 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

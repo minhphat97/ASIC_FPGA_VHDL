@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/tka52/Desktop/ENSC252/Lab4/Part2/simulation/qsim
+vripple_carry
+!s110 1538775585
+!i10b 1
+!s100 MXFdi8Db?bZ1SV5[FPCbg2
+IaO6OTG<5I@V4d]e`onm_S3
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1538775584
+8ripple_carry.vo
+Fripple_carry.vo
+L0 32
+Z2 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1538775585.782000
+!s107 ripple_carry.vo|
+!s90 -work|work|ripple_carry.vo|
+!i113 1
+Z3 o-work work
+vripple_carry_vlg_check_tst
+Z4 !s110 1538775586
+!i10b 1
+!s100 :L16`;?15BigOa@IVlh_G1
+ILh?o6JZAKRKSjZH4>_]333
+R1
+R0
+Z5 w1538775582
+Z6 8Waveform.vwf.vt
+Z7 FWaveform.vwf.vt
+L0 74
+R2
+r1
+!s85 0
+31
+Z8 !s108 1538775585.969000
+Z9 !s107 Waveform.vwf.vt|
+Z10 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R3
+vripple_carry_vlg_sample_tst
+R4
+!i10b 1
+!s100 SXjLK6h>VhAZh]>Ch]_[Q2
+I6^Y<g;UAhD_3<3Q1<IXL`1
+R1
+R0
+R5
+R6
+R7
+L0 30
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R3
+vripple_carry_vlg_vec_tst
+R4
+!i10b 1
+!s100 [d4iV1Fz;]j5ZkL9i^@:A3
+INND^hQAZOJ1VM4fjG1Y;63
+R1
+R0
+R5
+R6
+R7
+L0 277
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R3

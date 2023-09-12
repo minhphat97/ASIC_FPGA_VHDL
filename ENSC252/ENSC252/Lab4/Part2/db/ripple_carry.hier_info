@@ -1,0 +1,147 @@
+|ripple_top
+SW[0] => ripple_carry:obj1.Y0
+SW[1] => ripple_carry:obj1.Y1
+SW[2] => ripple_carry:obj1.Y2
+SW[3] => ripple_carry:obj1.Y3
+SW[4] => ripple_carry:obj1.Cin
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ripple_carry:obj1.X0
+SW[15] => ripple_carry:obj1.X1
+SW[16] => ripple_carry:obj1.X2
+SW[17] => ripple_carry:obj1.X3
+LEDG[0] <= ripple_carry:obj1.Cout
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= <GND>
+LEDR[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= LEDR[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= LEDR[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= LEDR[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= SegDecoder:obj2.Y[0]
+HEX0[1] <= SegDecoder:obj2.Y[1]
+HEX0[2] <= SegDecoder:obj2.Y[2]
+HEX0[3] <= SegDecoder:obj2.Y[3]
+HEX0[4] <= SegDecoder:obj2.Y[4]
+HEX0[5] <= SegDecoder:obj2.Y[5]
+HEX0[6] <= SegDecoder:obj2.Y[6]
+
+
+|ripple_top|ripple_carry:obj1
+X0 => FullAdder:obj1.A
+X1 => FullAdder:obj2.A
+X2 => FullAdder:obj3.A
+X3 => FullAdder:obj4.A
+Y0 => FullAdder:obj1.B
+Y1 => FullAdder:obj2.B
+Y2 => FullAdder:obj3.B
+Y3 => FullAdder:obj4.B
+Cin => FullAdder:obj1.C
+S0 <= FullAdder:obj1.Sum
+S1 <= FullAdder:obj2.Sum
+S2 <= FullAdder:obj3.Sum
+S3 <= FullAdder:obj4.Sum
+Cout <= FullAdder:obj4.Carry
+
+
+|ripple_top|ripple_carry:obj1|FullAdder:obj1
+A => Sum.IN0
+A => Carry.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+B => Carry.IN0
+C => Sum.IN1
+C => Carry.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ripple_top|ripple_carry:obj1|FullAdder:obj2
+A => Sum.IN0
+A => Carry.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+B => Carry.IN0
+C => Sum.IN1
+C => Carry.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ripple_top|ripple_carry:obj1|FullAdder:obj3
+A => Sum.IN0
+A => Carry.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+B => Carry.IN0
+C => Sum.IN1
+C => Carry.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ripple_top|ripple_carry:obj1|FullAdder:obj4
+A => Sum.IN0
+A => Carry.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+B => Carry.IN0
+C => Sum.IN1
+C => Carry.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ripple_top|SegDecoder:obj2
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
