@@ -14,7 +14,6 @@ architecture test of ha_tb is
 			c: out std_ulogic
 		);
 	end component;
-	
 	signal a, b, o, c: std_ulogic;
 	
 begin
