@@ -4,7 +4,7 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity ALU is
-	generic(N
+	generic(constant N: natural := 1);
 	port
 	(
 		A, B: in std_logic_vector(7 downto 0);
@@ -29,7 +29,34 @@ begin
 		when "0010" =>
 			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) * to_integer(unsigned(B))),8));
 		when "0011" =>
-			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) * to_integer(unsigned(B))),8));
-
+			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) / to_integer(unsigned(B))),8));
+		when "0100" =>
+			ALU_Result <= std_logic_vector(unsigned(A) sll N);
+		when "0101" =>
+			ALU_Result <= std_logic_vector(unsigned(A) srl N);
+		when "0110" =>
+			ALU_Result <= std_logic_vector(unsigned(A) rol N);
+		when "0111" =>
+			ALU_Result <= std_logic_vector(unsigned(A) ror N);
+		when "1000" =>
+			ALU_Result <= A and B;
+		when "1001" =>
+			ALU_Result <= A or B;
+		when "1010" =>
+			ALU_Result <= A xor B;
+		when "1011" =>
+			ALU_Result <= A nor B;
+		when "1100" =>
+			ALU_Result <= A nand B;
+		when "1101" =>
+			ALU_Result <= A xnor B;
+		when "1110" =>
+			if (A > B) then
+				ALU_Result <= x"01";
+			else
+				ALU_Result <= x"00";
+			end if;
+			
+		
 
 end behavior;
