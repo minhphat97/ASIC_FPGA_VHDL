@@ -1,6 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
+--use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity ALU is
@@ -10,7 +10,7 @@ entity ALU is
 		A, B: in std_logic_vector(7 downto 0);
 		ALU_Sel: in std_logic_vector(3 downto 0);
 		ALU_Out: out std_logic_vector(7 downto 0);
-		Carryout: out std_logic;
+		Carryout: out std_logic
 	);
 end ALU;
 
@@ -23,9 +23,9 @@ begin
 	begin
 		case(ALU_Sel)is
 		when "0000" =>
-			ALU_Result <= A + B;
+			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) + to_integer(unsigned(B))),8));
 		when "0001" =>
-			ALU_Result <= A - B;
+			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) - to_integer(unsigned(B))),8));
 		when "0010" =>
 			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) * to_integer(unsigned(B))),8));
 		when "0011" =>
@@ -65,13 +65,13 @@ begin
 			end if;
 		
 		when others =>
-			ALU_Result <= A + B;
+			ALU_Result <= std_logic_vector(to_unsigned((to_integer(unsigned(A)) + to_integer(unsigned(B))),8));
 	
 		end case;
-	end  process
+	end  process;
 	
 	ALU_Out <= ALU_Result;
-	tmp <= ('0'&A) + ('0'&B);
+	tmp <= std_logic_vector(to_unsigned((to_integer(unsigned('0'&A)) * to_integer(unsigned('0'&B))),8));
 	Carryout <= tmp(8); --Carry flag
 	
 end behavior;
