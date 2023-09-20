@@ -16,7 +16,7 @@ end ALU;
 
 architecture behavior of ALU is
 	signal ALU_Result: std_logic_vector(7 downto 0);
-	signal temp: std_logic_vector(8 downto 0);
+	signal tmp: std_logic_vector(8 downto 0);
 	
 begin
 	process (A,B,ALU_Sel)
@@ -57,6 +57,21 @@ begin
 				ALU_Result <= x"00";
 			end if;
 			
+		when "1111" =>
+			if (A = B) then
+				ALU_Result <= x"01";
+			else
+				ALU_Result <= x"00";
+			end if;
 		
-
+		when others =>
+			ALU_Result <= A + B;
+	
+		end case;
+	end  process
+	
+	ALU_Out <= ALU_Result;
+	tmp <= ('0'&A) + ('0'&B);
+	Carryout <= tmp(8); --Carry flag
+	
 end behavior;
