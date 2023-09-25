@@ -34,14 +34,27 @@ begin
 				when A =>
 					if Input = x"A5" then
 						y <= B;
+					end if;
 				when B =>
 					if Input = x"DE" then
 						y <= B;
 					elsif Input = x"FF" then
 						y <= C;
+					end if;
 				when C =>
-					if Input = x"CC" -- Assume Payload Data
-						y
+					if Input = x"CC" then -- Assume Payload Data
+						y <= D;
+					else
+						y <= B;
+					end if;
+				when D =>
+					if Input = x"00" then
+						y <= C;
+					end if;
+			end case;
+		end if;
+	end process;
+	
 					
 				
 					
