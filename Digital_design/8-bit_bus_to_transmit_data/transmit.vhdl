@@ -17,7 +17,7 @@ entity transmit is
 		Reset: in std_logic;
 		Clock: in std_logic;
 		Input: in std_logic_vector(7 downto 0);
-		z: out std_logic_vector(7 downto 0);
+		z: out std_logic_vector(7 downto 0)
 	);
 end transmit;
 
@@ -57,26 +57,7 @@ begin
 	z <= Input when y = D else x"00";
 end behavior;
 	
-					
 				
-					
-					
-	
-	
-	
-	
-	
-	
-	
-	
-	end process;
-
-
-
-
-
-end behavior;
-
 
 
 
