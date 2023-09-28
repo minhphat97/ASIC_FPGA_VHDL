@@ -54,6 +54,8 @@ begin
 			end case;
 		end if;
 	end process;
+	z <= Input when y = D else x"00";
+end behavior;
 	
 					
 				
