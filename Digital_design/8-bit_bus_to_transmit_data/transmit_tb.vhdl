@@ -17,8 +17,12 @@ architecture test of transmit_tb is
 	signal Reset, Clock: std_logic;
 	signal Input: std_logic_vector(7 downto 0);
 	signal z: std_logic_vector(7 downto 0);
+	constant clock_period: time := 40ns;
 
 begin
-	
+	transmit: transmit port map(Reset => Reset, Clock => Clock, Input => Input, z => z);
+	process begin
+		Reset <= '1';
+		Clock <= '0';
 
 end test;
