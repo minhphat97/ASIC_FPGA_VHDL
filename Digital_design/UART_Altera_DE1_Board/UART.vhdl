@@ -17,7 +17,7 @@ end UART;
 architecture behavior of UART is
 signal TX_DATA: std_logic_vector(7 downto 0);
 signal TX_START: std_logic:='0';
-signal TX_BUSY: std_logic;
+signal TX_BUSY: std_logic; --every variable/signal of type 'bit' would be set to '0' at the beginning of each simulation.
 ---------------------------------------------------------------------------
 component TX
 port(
@@ -33,17 +33,15 @@ begin
 C1: TX port map (CLOCK_50,TX_START,TX_BUSY,TX_DATA,UART_TXD);
 
 process(CLOCK_50)
+begin
 if(CLOCK_50'event and CLOCK_50='1')then
-
-
-
-
-
+	if(KEY(0) = '0' and TX_BUSY = '0') then
+		TX_DATA <= SW(7 downto 0);
+		TX_START <= '1';
+		LEDG <= TX_DATA;
+	else
+		TX_START <= '0';
+	end if;
 end if;
-
-
-
-
-
 end process;
 end behavior;
