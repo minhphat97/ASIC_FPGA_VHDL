@@ -29,15 +29,26 @@ if (CLK'event and CLK='1')then
 	
 	if (RX_FLG = '1') then
 		DATAFILL(INDEX) <= RX_LINE;
-	
+		if(PRSCL < 5207) then
+			PRSCL <= PRSCL + 1;
+		else 
+			PRSCL <= 0;
+		end if;
+		
+		if(PRSCL = 2500) then
+			if (INDEX < 9) then
+				INDEX <= INDEX + 1;
+			else
+				if(DATAFILL(0) = '0' and DATAFILL(9) = '1')then
+					DATA <= DATAFILL(8 downto 0);
+				else
+					DATA <= (others => '0')		
+				end if;
+				TX_FLG <= '0';
+				BUSY <= '0';
+			end if;
+		end if;
 	end if;
-
-
-
-
-
-
-
 end if;
 end process;
 end behavior;
