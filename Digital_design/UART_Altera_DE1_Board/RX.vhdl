@@ -11,7 +11,7 @@ BUSY: OUT STD_LOGIC;
 );
 end RX;
 
-architecture nehavior of RX is
+architecture behavior of RX is
 signal DATAFLL: std_logic_vector(9 downto 0);
 signal RX_FLG: std_logic:='0';
 signal PRSCL: integer range 0 to 5208:=0;
